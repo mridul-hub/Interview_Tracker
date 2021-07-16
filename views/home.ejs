@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPT</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <!-- <h1><a href="/">Interview Tracker</a></h1> -->
+    <ul>
+      <% if (locals.user) { %>
+
+        <li >Welcome, <%= locals.user.username %></li>
+        <li ><a href="/logout">Log out</a></li>
+      <% } else { %>
+
+        <li ><a href="/login">Log in</a></li>
+        <li ><a href="/signup" class="btn">Sign up</a></li>
+      <% } %>
+    </ul>
+  </nav>
+<header>
+  <div class="smoothie">
+    <img src="/smoothie.png" alt="">
+  </div>
+  <div class="headings">
+    <h2>Interview Preparation Tracker</h2>
+    <h3>By Mridul Gupta</h3>
+    <a href="/smoothies" class="btn">View Courses Available</a>
+  </div>
+</header>
+
+
+<%- include('partials/footer'); -%>

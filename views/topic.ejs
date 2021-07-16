@@ -1,0 +1,151 @@
+
+<html lang="en">
+<head>
+
+     <title>Interview Tracker</title>
+<!--
+
+DIGITAL TREND
+
+https://templatemo.com/tm-538-digital-trend
+
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/css/font-awesome.min.css">
+     <link rel="stylesheet" href="/css/aos.css">
+     <link rel="stylesheet" href="/css/owl.carousel.min.css">
+     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+     <!-- <link rel="stylesheet" href="/styles.css"> -->
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="/css/templatemo-digital-trend.css">
+
+</head>
+<body>
+
+     <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+              <!-- <i class="fa fa-line-chart"></i> -->
+              <img src="./images/logo.png">
+              Interview Tracker
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item">
+                        <a href="/login" class="nav-link smoothScroll">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/signup" class="nav-link contact">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/topic" class="nav-link">Practice</a>
+                    </li>
+
+                    <li class="nav-item">
+                         <a href ="/logout" class="nav-link smoothScroll">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link contact">Contact</a>
+                    </li> -->
+                    <% if (user) { %>
+
+                      <!--
+
+                       -->
+                       <li class="nav-item">
+                           <a href ="#" class="nav-link smoothScroll">WELCOME! <%= user.username %></a>
+                      </li>
+                      <li class="nav-item">
+                           <a href ="/logout" class="nav-link smoothScroll">Log out</a>
+                      </li>
+
+                    <% } else { %>
+
+                      <!-- <li ><a href="/login">Log in</a></li>
+                      <li ><a href="/signup" class="btn">Sign up</a></li> -->
+                 <li class="nav-item">
+                     <a href="/login" class="nav-link smoothScroll">Login</a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="/signup" class="nav-link contact">Sign Up</a>
+                 </li>
+
+                    <% } %>
+
+                 <li class="nav-item">
+                     <a href="/topic" class="nav-link">Practice</a>
+                 </li>
+
+               </ul>
+            </div>
+        </div>
+    </nav>
+
+<link rel="stylesheet" href="/styles.css">
+
+<h2 >Here are some of the topics to practice</h2>
+<ul class="recipes">
+  <li class="recipe">
+
+    <img src="/Arrays.png" href ="/topic/Arrays">
+    <a href ="/topic/Arrays"><h4>Arrays</h4></a>
+    <!-- <p>Banana, Vanilla ice cream, Milk</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Bineary Search.png" href ="/topic/Binary Search" >
+    <a href ="/topic/Binary-Search"><h4>Binary Search</h4></a>
+    <!-- <p>Peach, Pinapple, Apple juice</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/DP.png" href ="/topic/DP">
+    <a href ="/topic/DP"><h4>Dynamic Proggraming</h4></a>
+    <!-- <p>Oats, Peanut butter, Milk, Banana, Blueberries</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Graph.png" href ="/topic/Graph">
+    <a href ="/topic/Graph"><h4>Graph</h4></a>
+    <!-- <p>Banana, Vanilla ice cream, Milk</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Greedy.png" href ="/topic/Greedy">
+    <a href ="/topic/Greedy"><h4>Greedy</h4></a>
+    <!-- <p>Peach, Pinapple, Apple juice</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Math.png" href ="/topic/Math">
+    <a href ="/topic/Math"><h4>Math</h4></a>
+    <!-- <p>Oats, Peanut butter, Milk, Banana, Blueberries</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Tree.png" href ="/topic/Tree">
+    <a href ="/topic/Tree"><h4>Tree</h4></a>
+    <!-- <p>Oats, Peanut butter, Milk, Banana, Blueberries</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Time Complexity.jpg" href ="/topic/Time Complexity">
+    <a href ="/topic/Time Complexity"><h4>Time Complexity</h4></a>
+    <!-- <p>Oats, Peanut butter, Milk, Banana, Blueberries</p> -->
+  </li>
+  <li class="recipe">
+    <img src="/Strings.png" href ="/topic/Strings">
+    <a href ="/topic/Strings"><h4>Strings</h4></a>
+    <!-- <p>Oats, Peanut butter, Milk, Banana, Blueberries</p> -->
+  </li>
+</ul>
+</body>
+<!-- <%- include('partials/footer'); -%> -->

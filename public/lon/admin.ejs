@@ -1,0 +1,42 @@
+<%- include('partials/header'); -%>
+
+<form >
+    <h2>Add Question</h2>
+    <label for="name">Question name</label>
+    <input type="text" name ="name" required />
+    <label for="linkto">Link of question</label>
+    <input type="text" name ="linkto" required />
+    <label for="top">Topic</label>
+    <input type="text" name ="top" required />
+    <button>Submit</button>
+</form>
+<script>
+    const form =document.querySelector('form');
+    form.addEventListener('submit', async (e)=>
+    {
+        e.preventDefault();
+        const name =form.name.value;
+        const top = form.top.value;
+        const linkto =form.linkto.value;
+        try {
+             const res = await fetch('/adminpanel',{
+                 method: 'POST',
+                 body : JSON.stringify({name: name,linkto: linkto,top: top }),
+                 headers : {'Content-Type': 'application/json'}
+             });
+            const data = await res.json();
+            console.log(data);
+            if(data.user)
+            {
+                location.assign('/adminpanel');
+            }
+
+        }catch(err)
+        {
+            console.log(err);
+        }
+        
+    });
+</script>
+
+<%- include('partials/footer'); -%>

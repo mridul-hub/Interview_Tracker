@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/lon/style.css">
+<div class="wrapper fadeInDown">
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+	  <h2 class="active"> Add Question </h2>
+	  <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+  
+	  <!-- Icon -->
+	  <div class="fadeIn first">
+		<!-- <img src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png" id="icon" alt="User Icon" /> -->
+	  </div>
+  
+	  <!-- Login Form -->
+	  <form>
+		<input type="text" id="name" class="fadeIn second" name="name" placeholder="Question name" required />
+		<input type="text" id="liinkto" class="fadeIn third" name="linkto" placeholder="Link of question" required/>
+		<input type="text" id="top" class="fadeIn fourth" name ="top" placeholder="Topic" required />
+        <input type="submit" class="fadeIn fourth" value="Submit">
+        <!-- <button>Submit</button> -->
+	  </form>
+      <script>
+		const form =document.querySelector('form');
+		form.addEventListener('submit', async (e)=>
+		{
+			e.preventDefault();
+			const name =form.name.value;
+			const top = form.top.value;
+			const linkto =form.linkto.value;
+			try {
+				 const res = await fetch('/adminpanel',{
+					 method: 'POST',
+					 body : JSON.stringify({name: name,linkto: linkto,top: top }),
+					 headers : {'Content-Type': 'application/json'}
+				 });
+				const data = await res.json();
+				console.log(data);
+				if(data.user)
+				{
+					location.assign('/adminpanel');
+				}
+	
+			}catch(err)
+			{
+				console.log(err);
+			}
+			
+		});
+	</script>
+	  <!-- Remind Passowrd -->
+	  <!-- <div id="formFooter">
+		<a class="underlineHover" href="#">Forgot Password?</a>
+	  </div> -->
+  
+	</div>
+  </div>

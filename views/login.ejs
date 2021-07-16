@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/lon/style.css">
+<div class="wrapper fadeInDown">
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+	  <h2 class="active"> Login </h2>
+	  <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+	  <!-- Icon -->
+	  <div class="fadeIn first">
+		<img src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png" id="icon" alt="User Icon" />
+	  </div>
+
+	  <!-- Login Form -->
+	  <form>
+		<input type="text" id="login" class="fadeIn second" name="email" placeholder="E-mail" required />
+		<div class="email error"></div>
+		<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required/>
+		<div class="password error"></div>
+		<input type="submit" class="fadeIn fourth" value="Log In">
+	  </form>
+
+	  <!-- Remind Passowrd -->
+
+	  <script>
+		const form =document.querySelector('form');
+		const emailError = document.querySelector('.email.error');
+		const passwordError = document.querySelector('.password.error');
+		form.addEventListener('submit', async (e)=>
+		{
+			e.preventDefault();
+			emailError.textContent = '';
+			passwordError.textContent = '';
+			const email =form.email.value;
+			const password = form.password.value;
+			try {
+				 const res = await fetch('/login',{
+					 method: 'POST',
+					 body : JSON.stringify({email: email, password: password}),
+					 headers : {'Content-Type': 'application/json'}
+				 });
+				const data = await res.json();
+				console.log(data);
+				if(data.errors)
+				{
+					emailError.textContent = data.errors.email;
+					passwordError.textContent = data.errors.password;
+				}
+				if(data.user)
+				{
+					location.assign('/');
+				}
+
+			}catch(err)
+			{
+				console.log(err);
+			}
+		});
+	</script>
+
+
+	</div>
+  </div>

@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+
+     <title>Interview Tracker</title>
+<!--
+
+DIGITAL TREND
+
+https://templatemo.com/tm-538-digital-trend
+
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/css/font-awesome.min.css">
+     <link rel="stylesheet" href="/css/aos.css">
+     <link rel="stylesheet" href="/css/owl.carousel.min.css">
+     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+     <!-- <link rel="stylesheet" href="/styles.css"> -->
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="/css/templatemo-digital-trend.css">
+
+</head>
+<body>
+
+     <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+              <!-- <i class="fa fa-line-chart"></i> -->
+              <img src="./images/logo.png">
+              Interview Tracker
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item">
+                        <a href="/login" class="nav-link smoothScroll">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/signup" class="nav-link contact">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/topic" class="nav-link">Practice</a>
+                    </li>
+
+                    <li class="nav-item">
+                         <a href ="/logout" class="nav-link smoothScroll">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link contact">Contact</a>
+                    </li> -->
+                    <% if (user) { %>
+
+                      <!--
+
+                       -->
+                       <li class="nav-item">
+                           <a href ="#" class="nav-link smoothScroll">WELCOME! <%= user.username %></a>
+                      </li>
+                      <li class="nav-item">
+                           <a href ="/logout" class="nav-link smoothScroll">Log out</a>
+                      </li>
+
+                    <% } else { %>
+
+                      <!-- <li ><a href="/login">Log in</a></li>
+                      <li ><a href="/signup" class="btn">Sign up</a></li> -->
+                 <li class="nav-item">
+                     <a href="/login" class="nav-link smoothScroll">Login</a>
+                  </li>
+                 <li class="nav-item">
+                     <a href="/signup" class="nav-link contact">Sign Up</a>
+                 </li>
+
+                    <% } %>
+
+                 <li class="nav-item">
+                     <a href="/topic" class="nav-link">Practice</a>
+                 </li>
+
+               </ul>
+            </div>
+        </div>
+    </nav>
+
+<link rel="stylesheet" href="/styles.css">
+
+<h2> Here are some of question</h2>
+
+  <% for(var i=0; i < question.length; i++) { %>
+  <li class="recipe">
+     <h2><a href="<%= question[i].linkto %>"><%= question[i].name %></a></h2>
+  </li>
+  </br>
+</br>
+ <% } %>
+
+</body>
