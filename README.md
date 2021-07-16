@@ -37,6 +37,14 @@ _After clicking on a particular topic, you will get list of questions on that to
 
 ![Screenshot (246)](https://user-images.githubusercontent.com/62867903/125994039-e6e63186-7810-443a-82f8-fc4858499fae.png)  
 
+### Admin Page
+
+_To add New questiong you can to add questions page. Burt all users dont have acces to this pafge only admin users will have acces to this page._
+
+
+![Screenshot (247)](https://user-images.githubusercontent.com/62867903/125994876-ae804239-f1e8-42da-a8a3-da6f3bb81d5c.png)  
+
+
 ## INSTALLATION  
 
 * Download this github repo.
