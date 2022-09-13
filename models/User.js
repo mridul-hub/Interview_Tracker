@@ -17,6 +17,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true,'Please enter a password' ],
     minlength:[6,'Minimum password length is 6 character'] 
+  },
+  image: 
+  {
+    data : Buffer,
+    contentType: String
   }
 });
 userSchema.pre('save',async function(next)

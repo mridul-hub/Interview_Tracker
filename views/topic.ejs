@@ -26,7 +26,15 @@ https://templatemo.com/tm-538-digital-trend
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="/css/templatemo-digital-trend.css">
+     <style>
+      .avatar {
+vertical-align: middle;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+}
 
+  </style>
 </head>
 <body>
 
@@ -46,51 +54,15 @@ https://templatemo.com/tm-538-digital-trend
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <!-- <li class="nav-item">
-                        <a href="/login" class="nav-link smoothScroll">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/signup" class="nav-link contact">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/topic" class="nav-link">Practice</a>
-                    </li>
-
-                    <li class="nav-item">
-                         <a href ="/logout" class="nav-link smoothScroll">Log out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link contact">Contact</a>
-                    </li> -->
-                    <% if (user) { %>
-
-                      <!--
-
-                       -->
-                       <li class="nav-item">
-                           <a href ="#" class="nav-link smoothScroll">WELCOME! <%= user.username %></a>
-                      </li>
-                      <li class="nav-item">
-                           <a href ="/logout" class="nav-link smoothScroll">Log out</a>
-                      </li>
-
-                    <% } else { %>
-
-                      <!-- <li ><a href="/login">Log in</a></li>
-                      <li ><a href="/signup" class="btn">Sign up</a></li> -->
-                 <li class="nav-item">
-                     <a href="/login" class="nav-link smoothScroll">Login</a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="/signup" class="nav-link contact">Sign Up</a>
-                 </li>
-
-                    <% } %>
-
-                 <li class="nav-item">
-                     <a href="/topic" class="nav-link">Practice</a>
-                 </li>
-
+                  <li class="nav-item">
+                    <a href="/topic" class="nav-link">TOPICS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/" class="nav-link">INTERVIEW EXPERIENCE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/" class="nav-link">CONTACT US</a>
+                </li>
                </ul>
             </div>
         </div>
