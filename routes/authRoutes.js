@@ -13,5 +13,6 @@ router.get('/adminpanel',adminAuth,authController.admin_get);
 router.post('/adminpanel',adminAuth,authController.admin_post);
 router.get('/topic',requireAuth,authController.topic_get);
 router.get('/topic/:name',requireAuth,authController.question_get);
+// router.get('/profile',requireAuth,authController.profile_get);
 
 module.exports = router;

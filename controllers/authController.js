@@ -1,8 +1,11 @@
 // controller actions
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 const Topic = require('../models/Topic');
 const Question = require('../models/Question');
+const fs = require('fs');
+
 const handleErrors =(err) =>{
   console.log(err.message, err.code);
   let error ={ email: '', password: '' };
@@ -47,9 +50,12 @@ module.exports.login_get = (req, res) => {
 
 module.exports.signup_post = async (req, res) => {
    const {username, email, password } = req.body;
-   
+  //  const image = fs.readFileSync()
+  image = {
+    data: fs.readFileSync(path.join(__dirname + '/' + 'avatar')),
+  contentType: 'image/png'}
   try {
-    const user = await User.create({ username ,email, password });
+    const user = await User.create({ username ,email, password,image });
     const token =createToken(user._id);
     res.cookie('jwt', token,{ httpOnly:true, maxAge: maxAge*1000 });
     res.status(201).json({ user: user._id });
@@ -148,4 +154,8 @@ module.exports.question_get = async(req,res) =>
    })
   
 
+}
+module.exports.profile_get = async(req,res) =>
+{
+   res.render('profile');
 }
